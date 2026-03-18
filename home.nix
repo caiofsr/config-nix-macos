@@ -61,7 +61,7 @@
       nix-cleanup = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
       vi = "nvim";
       vim = "nvim";
-      dev = "cd Development";
+      dev = "cd ~/Development";
     };
   };
 
