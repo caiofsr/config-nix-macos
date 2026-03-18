@@ -32,7 +32,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    PODMAN_COMPOSE_PROVIDER = "podman-compose";
   };
 
   # Configuração declarativa de programas
