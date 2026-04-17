@@ -31,12 +31,14 @@
 
     taps = [
       "protonpass/tap"
+      "anomalyco/tap"
     ];
 
     brews = [
       "mas"
       "protonpass/tap/pass-cli"
       "mkcert"
+      "anomalyco/tap/opencode"
     ];
 
     casks = [
@@ -52,6 +54,8 @@
       "ungoogled-chromium"
       "dockdoor"
       "orbstack"
+      "codex"
+      "helium"
     ];
 
     masApps = { };

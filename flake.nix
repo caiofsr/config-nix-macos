@@ -13,10 +13,17 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew }: {
-    darwinConfigurations."MacBook-Air-de-Caio" =
-      nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin"; 
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+      home-manager,
+      nix-homebrew,
+    }:
+    {
+      darwinConfigurations."MacBook-Air-de-Caio" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
         modules = [
           ./configuration.nix
           home-manager.darwinModules.home-manager
@@ -28,11 +35,11 @@
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
-                enable = true;
-                user = "caiofernando";
-              };
+              enable = true;
+              user = "caiofernando";
+            };
           }
         ];
       };
-  };
+    };
 }
