@@ -11,6 +11,9 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
+    helium.url = "github:schembriaiden/helium-browser-nix-flake";
+    helium.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -20,10 +23,14 @@
       nixpkgs,
       home-manager,
       nix-homebrew,
+      helium,
     }:
     {
       darwinConfigurations."MacBook-Air-de-Caio" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./configuration.nix
           home-manager.darwinModules.home-manager

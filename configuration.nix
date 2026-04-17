@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   nix.settings.experimental-features = [
     "nix-command"
@@ -19,6 +19,7 @@
     git
     curl
     wget
+    inputs.helium.packages.${pkgs.system}.default
   ];
 
   # Gerenciamento do Homebrew
@@ -35,7 +36,6 @@
     ];
 
     brews = [
-      "mas"
       "protonpass/tap/pass-cli"
       "mkcert"
       "anomalyco/tap/opencode"
@@ -51,11 +51,9 @@
       "raycast"
       "freelens"
       "whatsapp"
-      "ungoogled-chromium"
       "dockdoor"
       "orbstack"
       "codex"
-      "helium"
     ];
 
     masApps = { };
