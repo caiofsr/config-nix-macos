@@ -8,7 +8,7 @@
     ripgrep
     fd
     fzf
-    gh # GitHub CLI
+    gh
     neovim
     lazygit
     xclip
@@ -32,6 +32,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    NPM_CONFIG_PREFIX = "$HOME/.npm-global";
   };
 
   # Configuração declarativa de programas
@@ -49,11 +50,12 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    initContent = ''
+    initExtra = ''
       eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/spaceship.omp.json')"
 
       export AWS_PROFILE=secrets 
-      source ${pkgs.asdf-vm}/share/zsh/site-functions/_asdf
+      source ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
+      export PATH="$HOME/.npm-global/bin:$PATH"
     '';
     shellAliases = {
       nix-rebuild = "sudo darwin-rebuild switch --flake /etc/nix-darwin";

@@ -27,11 +27,11 @@
     }:
     {
       darwinConfigurations."MacBook-Air-de-Caio" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
         specialArgs = {
           inherit inputs;
         };
         modules = [
+          { nixpkgs.hostPlatform = "aarch64-darwin"; }
           ./configuration.nix
           home-manager.darwinModules.home-manager
           {

@@ -28,6 +28,7 @@
     onActivation = {
       autoUpdate = true;
       cleanup = "zap";
+      upgrade = true;
     };
 
     taps = [
@@ -36,12 +37,12 @@
     ];
 
     brews = [
-      "protonpass/tap/pass-cli"
       "mkcert"
       "anomalyco/tap/opencode"
     ];
 
     casks = [
+      "proton-pass-cli"
       "zed"
       "visual-studio-code"
       "ghostty"
