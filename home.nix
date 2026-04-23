@@ -53,8 +53,7 @@
     initContent = ''
       eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/spaceship.omp.json')"
 
-      export AWS_PROFILE=secrets 
-      source ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
+      export AWS_PROFILE=secrets
       export PATH="$HOME/.npm-global/bin:$PATH"
     '';
     shellAliases = {
