@@ -19,7 +19,7 @@
     git
     curl
     wget
-    inputs.helium.packages.${pkgs.system}.default
+    inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # Gerenciamento do Homebrew
