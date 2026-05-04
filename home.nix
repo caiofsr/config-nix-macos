@@ -60,6 +60,7 @@
       nix-rebuild = "sudo darwin-rebuild switch --flake /etc/nix-darwin";
       nix-update = "cd /etc/nix-darwin && nix flake update && sudo darwin-rebuild switch --flake . && cd -";
       nix-cleanup = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
+      nix-edit = "zed /etc/nix-darwin";
       vi = "nvim";
       vim = "nvim";
       dev = "cd ~/Development";
