@@ -21,12 +21,13 @@
     wget
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
+  environment.systemPath = [ "/opt/homebrew/bin" ];
 
   # Gerenciamento do Homebrew
   homebrew = {
     enable = true;
     onActivation = {
-      autoUpdate = true;
+      autoUpdate = false;
       cleanup = "zap";
       upgrade = true;
     };
@@ -37,6 +38,7 @@
     ];
 
     brews = [
+      "mas"
       "mkcert"
       "anomalyco/tap/opencode"
     ];
@@ -57,7 +59,9 @@
       "codex"
     ];
 
-    masApps = { };
+    masApps = {
+      "Medis" = 1579200037;
+    };
   };
 
   system.defaults = {

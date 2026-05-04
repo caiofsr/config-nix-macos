@@ -73,6 +73,10 @@
 
   programs.direnv = {
     enable = true;
+    package = pkgs.direnv.overrideAttrs (_: {
+      doCheck = false;
+      doInstallCheck = false;
+    });
     enableZshIntegration = true;
     nix-direnv.enable = true;
   };
