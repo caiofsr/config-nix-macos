@@ -11,6 +11,9 @@
   system.primaryUser = "caiofernando";
   system.stateVersion = 5;
 
+  # Home-manager: sobrescrever arquivos existentes criando backup
+  home-manager.backupFileExtension = "bak";
+
   # Touch ID no terminal
   security.pam.services.sudo_local.touchIdAuth = true;
 
@@ -21,26 +24,28 @@
     wget
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
-  environment.systemPath = [ "/opt/homebrew/bin" ];
+  environment.systemPath = [
+    "/opt/homebrew/bin"
+    "/usr/bin"
+    "/usr/local/bin"
+  ];
 
   # Gerenciamento do Homebrew
   homebrew = {
     enable = true;
     onActivation = {
-      autoUpdate = false;
-      cleanup = "zap";
+      autoUpdate = true;
+      cleanup = "none";
       upgrade = true;
     };
 
-    taps = [
+taps = [
       "protonpass/tap"
-      "anomalyco/tap"
     ];
 
     brews = [
       "mas"
       "mkcert"
-      "anomalyco/tap/opencode"
     ];
 
     casks = [
@@ -57,11 +62,10 @@
       "dockdoor"
       "orbstack"
       "codex"
+      "opencode-desktop"
     ];
 
-    masApps = {
-      "Medis" = 1579200037;
-    };
+    masApps = { };
   };
 
   system.defaults = {

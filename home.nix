@@ -23,7 +23,8 @@
     awscli2
     dbeaver-bin
     nil
-    opencode-desktop
+    opencode
+    opencode-claude-auth
     colima
     docker
     docker-compose
