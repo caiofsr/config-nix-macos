@@ -56,6 +56,7 @@
 
       export AWS_PROFILE=secrets
       export PATH="$HOME/.npm-global/bin:$PATH"
+      . "$HOME/.vite-plus/env"
     '';
     shellAliases = {
       nix-rebuild = "sudo darwin-rebuild switch --flake /etc/nix-darwin";

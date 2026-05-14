@@ -41,11 +41,13 @@
 
 taps = [
       "protonpass/tap"
+      "anomalyco/tap"
     ];
 
     brews = [
       "mas"
       "mkcert"
+      "opencode"
     ];
 
     casks = [
