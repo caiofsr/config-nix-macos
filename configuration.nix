@@ -39,15 +39,18 @@
       upgrade = true;
     };
 
-taps = [
+    taps = [
       "protonpass/tap"
       "anomalyco/tap"
+      "can1357/tap"
     ];
 
     brews = [
       "mas"
       "mkcert"
       "opencode"
+      "omp"
+      "cloudflared"
     ];
 
     casks = [

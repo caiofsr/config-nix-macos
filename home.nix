@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home.stateVersion = "25.05";
 
@@ -35,6 +35,22 @@
     EDITOR = "nvim";
     NPM_CONFIG_PREFIX = "$HOME/.npm-global";
   };
+
+  # Confia nos taps do Homebrew de forma declarativa
+  # Homebrew 6.0+ requer trust explícito para taps de terceiros
+  home.activation.trustHomebrewTaps =
+    let
+      trustedTaps = [
+        "anomalyco/tap"
+        "can1357/tap"
+        "protonpass/tap"
+      ];
+    in
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      for tap in ${lib.concatStringsSep " " trustedTaps}; do
+        brew trust --tap "$tap" 2>/dev/null || true
+      done
+    '';
 
   # Configuração declarativa de programas
   programs.git = {
