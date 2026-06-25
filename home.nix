@@ -44,6 +44,7 @@
         "anomalyco/tap"
         "can1357/tap"
         "protonpass/tap"
+        "manaflow-ai/cmux"
       ];
     in
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''

@@ -43,6 +43,7 @@
       "protonpass/tap"
       "anomalyco/tap"
       "can1357/tap"
+      "manaflow-ai/cmux"
     ];
 
     brews = [
@@ -66,6 +67,7 @@
       "whatsapp"
       "dockdoor"
       "orbstack"
+      "cmux"
       "codex"
       "opencode-desktop"
     ];
